@@ -1,23 +1,17 @@
 package Katas;
 
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class LoopInspector {
 
-//    public int loopSize(Node node) {
-//        Set<Node> set = new HashSet();
-//        Node point = node.getNext();
-//        while(!set.contains(point)) {
-//            set.add(point);
-//        }
-//        int count = 0;
-//        while (node.getNext() != point){
-//            count++;
-//        }
-//        return count;
-//    }
+    public int loopSize(Node node) {
+        List<Node> list = new ArrayList();
+        while(!list.contains(node)) {
+            list.add(node);
+            node = node.getNext();
+        }
+        return list.size() - list.indexOf(node);
+    }
 
 }
